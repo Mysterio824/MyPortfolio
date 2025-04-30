@@ -1,0 +1,98 @@
+@model MyPortfolio.Presentation.Models.PluginCreateViewModel
+@{
+    ViewData["Title"] = "Add Project";
+}
+
+<div class="container">
+    <h1 class="mb-4">Add New Project</h1>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Title" class="form-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="ImageUrl" class="form-label"></label>
+                            <input asp-for="ImageUrl" class="form-control" />
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                            <small class="form-text text-muted">Optional. URL to project image/screenshot.</small>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="GitHubUrl" class="form-label"></label>
+                            <input asp-for="GitHubUrl" class="form-control" />
+                            <span asp-validation-for="GitHubUrl" class="text-danger"></span>
+                            <small class="form-text text-muted">Optional. Link to GitHub repository.</small>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="LiveDemoUrl" class="form-label"></label>
+                            <input asp-for="LiveDemoUrl" class="form-control" />
+                            <span asp-validation-for="LiveDemoUrl" class="text-danger"></span>
+                            <small class="form-text text-muted">Optional. Link to live demo or deployed site.</small>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Technologies" class="form-label"></label>
+                            <input asp-for="Technologies" class="form-control" />
+                            <span asp-validation-for="Technologies" class="text-danger"></span>
+                            <small class="form-text text-muted">Required. Separate technologies with commas (e.g. C#, ASP.NET Core, Bootstrap).</small>
+                        </div>
+                        
+                        <div class="form-group mb-4">
+                            <label asp-for="Features" class="form-label"></label>
+                            <input asp-for="Features" class="form-control" />
+                            <span asp-validation-for="Features" class="text-danger"></span>
+                            <small class="form-text text-muted">Optional. Separate features with commas (e.g. User Authentication, Admin Dashboard).</small>
+                        </div>
+                        
+                        <div class="form-group text-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-plus-circle"></i> Create Project
+                            </button>
+                            <a asp-controller="Projects" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Creating a New Project</h5>
+                    <p class="card-text">
+                        This form allows you to add a new project to your portfolio. The project data will be compiled into a plugin (DLL) 
+                        that can be loaded by the application.
+                    </p>
+                    <p class="card-text">
+                        <strong>Required fields:</strong>
+                    </p>
+                    <ul class="card-text">
+                        <li>Title</li>
+                        <li>Description</li>
+                        <li>Technologies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 

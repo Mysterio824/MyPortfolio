@@ -1,0 +1,53 @@
+﻿@model MyPortfolio.Application.DTOs.PersonalInfoDto
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to My Portfolio</h1>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 text-center">
+        <img src="@(string.IsNullOrEmpty(Model.ProfilePictureUrl) ? "/images/profile-placeholder.jpg" : Model.ProfilePictureUrl)" 
+             alt="Profile Picture" class="rounded-circle img-fluid mb-3" style="max-width: 250px;">
+    </div>
+    <div class="col-md-8">
+        <h2>@Model.Name</h2>
+        <h4 class="text-muted">@Model.Title</h4>
+        <p class="lead mt-4">@Model.Summary</p>
+        <div class="mt-4">
+            <a href="@Model.LinkedInUrl" target="_blank" class="btn btn-outline-primary me-2">
+                <i class="bi bi-linkedin"></i> LinkedIn
+            </a>
+            <a href="@Model.GitHubUrl" target="_blank" class="btn btn-outline-dark me-2">
+                <i class="bi bi-github"></i> GitHub
+            </a>
+            <a href="mailto:@Model.Email" class="btn btn-outline-info">
+                <i class="bi bi-envelope"></i> Email
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12">
+        <h3>Skills</h3>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+            @foreach (var skill in Model.Skills)
+            {
+                <span class="badge bg-primary">@skill</span>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-12 text-center">
+        <h3>Check Out My Projects</h3>
+        <p class="lead">View my recent work and explore the projects I've been working on</p>
+        <a asp-controller="Projects" asp-action="Index" class="btn btn-primary btn-lg mt-3">
+            <i class="bi bi-collection"></i> View Projects
+        </a>
+    </div>
+</div>

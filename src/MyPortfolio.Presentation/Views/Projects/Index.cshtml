@@ -1,0 +1,67 @@
+@model List<MyPortfolio.Application.DTOs.ProjectDto>
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<div class="container">
+    <h1 class="mb-4">My Projects</h1>
+    
+    <div class="mb-4">
+        <p class="lead">
+            Here are some of the projects I've worked on. Click on any project to see more details.
+        </p>
+    </div>
+
+    <div class="row">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var project in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        @if (!string.IsNullOrEmpty(project.ImageUrl))
+                        {
+                            <img src="@project.ImageUrl" class="card-img-top" alt="@project.Title" style="height: 200px; object-fit: cover;">
+                        }
+                        else
+                        {
+                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                <i class="bi bi-code-square text-muted" style="font-size: 4rem;"></i>
+                            </div>
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@project.Title</h5>
+                            <p class="card-text text-truncate">@project.Description</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                @foreach (var tech in project.Technologies.Take(3))
+                                {
+                                    <span class="badge bg-secondary">@tech</span>
+                                }
+                                @if (project.Technologies.Count > 3)
+                                {
+                                    <span class="badge bg-secondary">+@(project.Technologies.Count - 3)</span>
+                                }
+                            </div>
+                            <a asp-action="Details" asp-route-id="@project.Id" class="btn btn-outline-primary stretched-link">View Details</a>
+                        </div>
+                        <div class="card-footer text-muted small">
+                            Created: @project.CreatedDate.ToString("MMMM yyyy")
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center py-5">
+                <div class="alert alert-info">
+                    <h4>No projects found</h4>
+                    <p>Start adding projects to build your portfolio!</p>
+                    <a asp-controller="Plugin" asp-action="Create" class="btn btn-primary mt-3">
+                        <i class="bi bi-plus-circle"></i> Add Project
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div> 
