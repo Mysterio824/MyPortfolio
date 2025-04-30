@@ -5,7 +5,7 @@ using MyPortfolio.Application.Services;
 
 namespace MyPortfolio.Application.Extensions;
 
-public static class ServiceCollectionExtensions
+public static class ApplicationDependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
 
     private static void AddServices(this IServiceCollection services)
     {
-        services.AddScoped<IProjectService, ProjectPlugin>();
+        services.AddScoped<IProjectService, ProjectService>();
         services.AddScoped<IPersonalInfoService, PersonalInfoService>();
         services.AddScoped<IPluginCompilerService, PluginCompilerService>();
     }

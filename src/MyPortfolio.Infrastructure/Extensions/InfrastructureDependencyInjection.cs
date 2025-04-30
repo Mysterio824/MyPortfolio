@@ -5,7 +5,7 @@ using MyPortfolio.Infrastructure.Repositories;
 
 namespace MyPortfolio.Infrastructure.Extensions;
 
-public static class ServiceCollectionExtensions
+public static class InfrastructureDependencyInjectionExtensions
 {
     public static IServiceCollection AddInfrastructureServices(
         this IServiceCollection services

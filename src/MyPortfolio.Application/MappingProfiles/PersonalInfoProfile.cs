@@ -8,8 +8,9 @@ namespace MyPortfolio.Application.MappingProfiles
     {
         public PersonalInfoProfile()
         {
-            CreateMap<PersonalInfo, PersonalInfoDto>();
-            CreateMap<PersonalInfoDto, PersonalInfo>();
+            CreateMap<PersonalInfo, PersonalInfoDto>().ReverseMap();
+            CreateMap<Experience, ExperienceDto>().ReverseMap();
+            CreateMap<Education, EducationDto>().ReverseMap();
         }
     }
 }

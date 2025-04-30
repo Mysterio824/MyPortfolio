@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using MyPortfolio.Domain.Common;
 using MyPortfolio.Domain.Entities;
 using MyPortfolio.Domain.Interfaces;
 
@@ -17,7 +18,6 @@ namespace MyPortfolio.Infrastructure.Plugins
                 return plugins;
             }
             
-            // Look for both JSON and DLL files in case we have older plugins
             foreach (var file in Directory.GetFiles(directory, "*.json"))
             {
                 var plugin = LoadPlugin(file);
@@ -27,7 +27,7 @@ namespace MyPortfolio.Infrastructure.Plugins
                 }
             }
             
-            logger.LogInformation($"Loaded {plugins.Count} plugins from {directory}");
+            logger.LogInformation("Loaded {PluginsCount} plugins from {Directory}", plugins.Count, directory);
             return plugins;
         }
 
@@ -41,45 +41,49 @@ namespace MyPortfolio.Infrastructure.Plugins
                 {
                     PropertyNameCaseInsensitive = true
                 };
-                
+
                 var pluginData = JsonSerializer.Deserialize<PluginData>(jsonContent, options);
-                
+
                 if (pluginData != null)
                 {
+                    var distinctProjects = new Dictionary<Guid, Project>();
+
+                    foreach (var project in pluginData.Projects)
+                    {
+                        if (!distinctProjects.ContainsKey(project.Id))
+                        {
+                            // If project has no ID, generate a new one
+                            if (project.Id == Guid.Empty)
+                            {
+                                logger.LogInformation("Plugin {PluginDataName} has no id", pluginData.Name);
+                                project.Id = Guid.NewGuid();
+                            }
+
+                            distinctProjects.Add(project.Id, project);
+                        }
+                        else
+                        {
+                            logger.LogWarning("Duplicate project found with Id {ProjectId}. Skipping duplicate.", project.Id);
+                            return null;
+                        }
+                    }
+
+                    logger.LogInformation("Plugin {PluginDataName} loaded with {DistinctProjectsCount} distinct projects", pluginData.Name, distinctProjects.Count);
+
                     return new JsonPlugin
                     {
                         Name = pluginData.Name,
                         Version = pluginData.Version,
-                        Projects = pluginData.Projects
+                        Projects = distinctProjects.Values.ToList()
                     };
                 }
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, $"Error loading plugin from {filePath}");
+                logger.LogError(ex, "Error loading plugin from {FilePath}", filePath);
             }
-            
+
             return null;
-        }
-    }
-
-    // Classes to hold plugin data
-    public class PluginData
-    {
-        public string Name { get; set; } = string.Empty;
-        public string Version { get; set; } = string.Empty; 
-        public List<Project> Projects { get; set; } = new List<Project>();
-    }
-
-    public class JsonPlugin : IPlugin
-    {
-        public string Name { get; set; } = string.Empty;
-        public string Version { get; set; } = string.Empty;
-        public List<Project> Projects { get; set; } = new List<Project>();
-
-        public List<Project> GetProjects()
-        {
-            return Projects;
         }
     }
 } 

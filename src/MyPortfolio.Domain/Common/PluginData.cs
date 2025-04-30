@@ -1,6 +1,6 @@
 ﻿using MyPortfolio.Domain.Entities;
 
-namespace MyPortfolio.Application.Common;
+namespace MyPortfolio.Domain.Common;
 
 // Class to hold the plugin data
 public class PluginData

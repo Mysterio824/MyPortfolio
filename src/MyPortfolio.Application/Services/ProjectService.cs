@@ -6,7 +6,7 @@ using MyPortfolio.Domain.Interfaces;
 
 namespace MyPortfolio.Application.Services
 {
-    public class ProjectPlugin(
+    public class ProjectService(
         IProjectPlugin projectPlugin, 
         IPluginLoader pluginLoader,
         IMapper mapper

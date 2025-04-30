@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using MyPortfolio.Application.Common;
 using MyPortfolio.Application.Interfaces;
+using MyPortfolio.Domain.Common;
 using MyPortfolio.Domain.Entities;
 
 namespace MyPortfolio.Application.Services
