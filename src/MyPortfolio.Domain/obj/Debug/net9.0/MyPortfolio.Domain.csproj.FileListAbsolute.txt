@@ -1,0 +1,11 @@
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\bin\Debug\net9.0\MyPortfolio.Domain.deps.json
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\bin\Debug\net9.0\MyPortfolio.Domain.dll
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\bin\Debug\net9.0\MyPortfolio.Domain.pdb
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\MyPortfolio.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\MyPortfolio.Domain.AssemblyInfoInputs.cache
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\MyPortfolio.Domain.AssemblyInfo.cs
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\MyPortfolio.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\MyPortfolio.Domain.dll
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\refint\MyPortfolio.Domain.dll
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\MyPortfolio.Domain.pdb
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Domain\obj\Debug\net9.0\ref\MyPortfolio.Domain.dll

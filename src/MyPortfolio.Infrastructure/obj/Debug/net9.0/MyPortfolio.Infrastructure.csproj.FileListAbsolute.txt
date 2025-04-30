@@ -1,0 +1,11 @@
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\bin\Debug\net9.0\MyPortfolio.Infrastructure.deps.json
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\bin\Debug\net9.0\MyPortfolio.Infrastructure.dll
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\bin\Debug\net9.0\MyPortfolio.Infrastructure.pdb
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\MyPortfolio.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\MyPortfolio.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\MyPortfolio.Infrastructure.AssemblyInfo.cs
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\MyPortfolio.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\MyPortfolio.Infrastructure.dll
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\refint\MyPortfolio.Infrastructure.dll
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\MyPortfolio.Infrastructure.pdb
+C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Infrastructure\obj\Debug\net9.0\ref\MyPortfolio.Infrastructure.dll
