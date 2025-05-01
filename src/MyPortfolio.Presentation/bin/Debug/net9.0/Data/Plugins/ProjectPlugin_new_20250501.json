@@ -1,0 +1,21 @@
+{
+  "Name": "ProjectPlugin_new_20250501",
+  "Version": "1.0.0",
+  "Projects": [
+    {
+      "Id": "00000000-0000-0000-0000-000000000000",
+      "Title": "new",
+      "Description": "new porject",
+      "ImageUrl": "https://www.facebook.com/photo/?fbid=1888379088584669\u0026set=pcb.2782607235268954\u0026__cft__[0]=AZXNTDKKtKeHNISN77nQOqINrVIhnN4BKXa-gNRY6OUxS68Bx-rvfOInps_pdyes31TWpFG0HZnbuIES2zpEnkmdlKN34CS0Zgk1lWJXmBKHVeSC08vonuEIHxzVh6S2bJCBIr-hJRAgKx4tHGRdW8R5UL8GZ9WAXpA9E1RJTBthDVVDTh6snxulOXf8OQeLDQhIUNeyBQ2S0LmrfAVLfx2v3S8uJJMCAPnIpYEVCWEs3g\u0026__tn__=*b0H-R",
+      "GitHubUrl": "https://github.com/Mysterio824/Android-Final-Project",
+      "LiveDemoUrl": "https://github.com/Mysterio824/Android-Final-Project",
+      "CreatedDate": "0001-01-01T00:00:00",
+      "Technologies": [
+        "no"
+      ],
+      "Features": [
+        "no"
+      ]
+    }
+  ]
+}

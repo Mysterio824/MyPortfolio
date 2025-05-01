@@ -1,10 +1,11 @@
-using MyPortfolio.Domain.Entities;
+using MyPortfolio.Application.DTOs;
 
 namespace MyPortfolio.Application.Interfaces
 {
     public interface IPluginCompilerService
     {
-        string CompileProjects(List<Project> projects, string pluginName, string outputDirectory);
-        bool ValidateProject(Project project);
+        string CompileProject(ProjectDto projectDto, string pluginName);
+        
+        bool ValidateProject(ProjectDto project);
     }
 } 

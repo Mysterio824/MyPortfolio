@@ -1,52 +1,37 @@
 using System.Text.Json;
+using AutoMapper;
 using Microsoft.Extensions.Logging;
+using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
-using MyPortfolio.Domain.Common;
 using MyPortfolio.Domain.Entities;
+using MyPortfolio.Domain.Repositories;
 
 namespace MyPortfolio.Application.Services
 {
-    public class PluginCompilerService(ILogger<PluginCompilerService> logger) : IPluginCompilerService
+    public class PluginCompilerService(
+        ILogger<PluginCompilerService> logger,
+        IMapper mapper,
+        IProjectRepository projectRepository)  
+        : IPluginCompilerService
     {
-        public string CompileProjects(List<Project> projects, string pluginName, string outputDirectory)
+        public string CompileProject(ProjectDto projectDto, string pluginName)
         {
-            // Validate all projects
-            foreach (var project in projects.Where(project => !ValidateProject(project)))
+            var project = mapper.Map<Project>(projectDto);
+            
+            if(!ValidateProject(projectDto))
             {
-                throw new Exception($"Project '{project.Title}' failed validation.");
-            }
-
-            // Create output directory if it doesn't exist
-            if (!Directory.Exists(outputDirectory))
-            {
-                Directory.CreateDirectory(outputDirectory);
+                throw new Exception($"Project '{projectDto.Title}' failed validation.");
             }
 
             try
             {
-                // Instead of trying to compile a DLL, we'll just serialize the projects to JSON
-                // This is a much simpler approach and avoids all the DLL loading issues
-                var jsonOptions = new JsonSerializerOptions
-                {
-                    WriteIndented = true
-                };
                 
-                var pluginData = new PluginData
-                {
-                    Name = pluginName,
-                    Version = "1.0.0",
-                    Projects = projects
-                };
+                // Store the plugin using the storage service
+                var filePath = projectRepository.CreateProject(project, pluginName);
                 
-                var jsonString = JsonSerializer.Serialize(pluginData, jsonOptions);
+                logger.LogInformation("Created plugin JSON data at {JsonFilePath}", filePath);
                 
-                // Write the JSON to a file
-                var jsonFilePath = Path.Combine(outputDirectory, $"{pluginName}.json");
-                File.WriteAllText(jsonFilePath, jsonString);
-                
-                logger.LogInformation("Created plugin JSON data at {JsonFilePath}", jsonFilePath);
-                
-                return jsonFilePath;
+                return filePath;
             }
             catch (Exception ex)
             {
@@ -55,7 +40,7 @@ namespace MyPortfolio.Application.Services
             }
         }
 
-        public bool ValidateProject(Project project)
+        public bool ValidateProject(ProjectDto project)
         {
             // Basic validation
             if (string.IsNullOrWhiteSpace(project.Title))

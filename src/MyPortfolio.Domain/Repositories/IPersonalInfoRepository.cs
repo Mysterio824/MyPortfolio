@@ -1,8 +1,8 @@
 using MyPortfolio.Domain.Entities;
 
-namespace MyPortfolio.Domain.Interfaces
+namespace MyPortfolio.Domain.Repositories
 {
-    public interface IPersonalInfoPlugin
+    public interface IPersonalInfoRepository
     {
         PersonalInfo GetPersonalInfo();
         void SavePersonalInfo(PersonalInfo personalInfo);

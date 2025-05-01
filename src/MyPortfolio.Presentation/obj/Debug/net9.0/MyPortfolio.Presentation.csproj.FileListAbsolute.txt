@@ -154,4 +154,3 @@ C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Presentation\bin\Debug\n
 C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Presentation\bin\Debug\net9.0\MyPortfolio.Infrastructure.dll
 C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Presentation\bin\Debug\net9.0\MyPortfolio.Infrastructure.pdb
 C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Presentation\obj\Debug\net9.0\compressed\m6pf8sdw1q-i8exvq2kmk.gz
-C:\Users\ASUS\RiderProjects\MyPortfolio\src\MyPortfolio.Presentation\bin\Debug\net9.0\Plugins\ProjectPlugin_Null_20250501.json

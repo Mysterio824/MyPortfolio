@@ -3,9 +3,9 @@ using MyPortfolio.Application.Interfaces;
 using MyPortfolio.Application.MappingProfiles;
 using MyPortfolio.Application.Services;
 
-namespace MyPortfolio.Application.Extensions;
+namespace MyPortfolio.Application.DependencyInjection;
 
-public static class ApplicationDependencyInjection
+public static class ApplicationServiceRegistration
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {

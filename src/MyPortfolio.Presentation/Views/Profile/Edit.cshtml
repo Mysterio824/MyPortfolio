@@ -1,0 +1,142 @@
+@model MyPortfolio.Application.DTOs.PersonalInfoDto
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<div class="container">
+    <h1 class="mb-4">Edit Profile</h1>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <form asp-action="Edit" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">Basic Information</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Name</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label">Professional Title</label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="ProfilePictureUrl" class="form-label">Profile Picture URL</label>
+                            <input asp-for="ProfilePictureUrl" class="form-control" />
+                            <span asp-validation-for="ProfilePictureUrl" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Summary" class="form-label">Professional Summary</label>
+                            <textarea asp-for="Summary" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Summary" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">Contact Information</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="LinkedInUrl" class="form-label">LinkedIn URL</label>
+                            <input asp-for="LinkedInUrl" class="form-control" />
+                            <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="GitHubUrl" class="form-label">GitHub URL</label>
+                            <input asp-for="GitHubUrl" class="form-control" />
+                            <span asp-validation-for="GitHubUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">Skills</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="skills" class="form-label">Skills (comma-separated)</label>
+                            <textarea id="skills" name="Skills" class="form-control" rows="3">@string.Join(", ", Model.Skills)</textarea>
+                            <span class="form-text">Enter your skills separated by commas (e.g. C#, JavaScript, ASP.NET)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">Education & Experience</div>
+                    <div class="card-body">
+                        <p class="fw-bold">Experiences:</p>
+                        @for (int i = 0; i < Model.Experiences.Count; i++)
+                        {
+                            <div class="border p-3 mb-3">
+                                <div class="mb-2">
+                                    <label class="form-label">Company</label>
+                                    <input name="Experiences[@i].Company" value="@Model.Experiences[i].Company" class="form-control" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Position</label>
+                                    <input name="Experiences[@i].Position" value="@Model.Experiences[i].Position" class="form-control" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Duration</label>
+                                    <input name="Experiences[@i].Duration" value="@Model.Experiences[i].Duration" class="form-control" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Description</label>
+                                    <textarea name="Experiences[@i].Description" class="form-control" rows="2">@Model.Experiences[i].Description</textarea>
+                                </div>
+                            </div>
+                        }
+
+                        <p class="fw-bold mt-4">Education:</p>
+                        @for (int i = 0; i < Model.Education.Count; i++)
+                        {
+                            <div class="border p-3 mb-3">
+                                <div class="mb-2">
+                                    <label class="form-label">Institution</label>
+                                    <input name="Education[@i].Institution" value="@Model.Education[i].Institution" class="form-control" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Degree</label>
+                                    <input name="Education[@i].Degree" value="@Model.Education[i].Degree" class="form-control" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Duration</label>
+                                    <input name="Education[@i].Duration" value="@Model.Education[i].Duration" class="form-control" />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
+            <a asp-controller="Home" asp-action="About" class="btn btn-secondary me-md-2">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save Profile</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 

@@ -2,23 +2,23 @@ using AutoMapper;
 using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
 using MyPortfolio.Domain.Entities;
-using MyPortfolio.Domain.Interfaces;
+using MyPortfolio.Domain.Repositories;
 
 namespace MyPortfolio.Application.Services
 {
     public class PersonalInfoService(
-        IPersonalInfoPlugin personalInfoPlugin,
+        IPersonalInfoRepository personalInfoRepository,
         IMapper mapper
     ) : IPersonalInfoService
     {
         public PersonalInfoDto GetPersonalInfo()
         {
-            return mapper.Map<PersonalInfoDto>(personalInfoPlugin.GetPersonalInfo());
+            return mapper.Map<PersonalInfoDto>(personalInfoRepository.GetPersonalInfo());
         }
         
         public void SavePersonalInfo(PersonalInfo personalInfo)
         {
-            personalInfoPlugin.SavePersonalInfo(personalInfo);
+            personalInfoRepository.SavePersonalInfo(personalInfo);
         }
     }
 } 

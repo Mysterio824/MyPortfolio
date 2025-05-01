@@ -1,59 +1,40 @@
+using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using MyPortfolio.Domain.Entities;
-using MyPortfolio.Domain.Interfaces;
+using MyPortfolio.Domain.Repositories;
+using MyPortfolio.Infrastructure.Plugins.Interfaces;
+using MyPortfolio.Infrastructure.Plugins.Models;
 
 namespace MyPortfolio.Infrastructure.Repositories
 {
-    public class PersonalInfoRepository : IPersonalInfoPlugin
+    public class PersonalInfoRepository : IPersonalInfoRepository
     {
-        private PersonalInfo _personalInfo = new()
-        {
-            Name = "John Doe",
-            Title = "Full Stack Developer",
-            Summary = "Passionate software developer with expertise in .NET Core, ASP.NET MVC, and Clean Architecture principles. I enjoy creating efficient, maintainable, and scalable applications.",
-            ProfilePictureUrl = "/images/profile.jpg",
-            Email = "john.doe@example.com",
-            LinkedInUrl = "https://linkedin.com/in/johndoe",
-            GitHubUrl = "https://github.com/johndoe",
-            Skills = new List<string>
-            {
-                "C#", ".NET Core", "ASP.NET MVC", "Clean Architecture", "Entity Framework", 
-                "HTML", "CSS", "JavaScript", "React", "SQL Server"
-            },
-            Experiences = new List<Experience>
-            {
-                new Experience
-                {
-                    Company = "ABC Corporation",
-                    Position = "Senior Developer",
-                    Duration = "2021 - Present",
-                    Description = "Developing enterprise applications using .NET technologies"
-                },
-                new Experience
-                {
-                    Company = "XYZ Solutions",
-                    Position = "Software Developer",
-                    Duration = "2018 - 2021",
-                    Description = "Worked on various web application projects"
-                }
-            },
-            Education = new List<Education>
-            {
-                new Education
-                {
-                    Institution = "University of Technology",
-                    Degree = "Master of Computer Science",
-                    Duration = "2016 - 2018"
-                },
-                new Education
-                {
-                    Institution = "City College",
-                    Degree = "Bachelor of Computer Science",
-                    Duration = "2012 - 2016"
-                }
-            }
-        };
+        private readonly ILogger<PersonalInfoRepository> _logger;
+        private PersonalInfo _personalInfo = new();
+        private readonly string _personalInfoPluginName = "PersonalInfoPlugin";
+        private readonly string _personalInfoDirectory;
 
-        // Initialize with default personal info
+        public PersonalInfoRepository(
+            ILogger<PersonalInfoRepository> logger,
+            IPluginStorage pluginStorage,
+            IPluginWatcher pluginWatcher)
+        {
+            _logger = logger;
+
+            _personalInfoDirectory = pluginStorage.GetPersonalInfoDirectoryPath();
+            
+            if (!Directory.Exists(_personalInfoDirectory))
+            {
+                Directory.CreateDirectory(_personalInfoDirectory);
+                _logger.LogInformation("Created personal info directory: {Directory}", _personalInfoDirectory);
+            }
+
+            // Subscribe to plugin directory changes
+            pluginWatcher.PluginDirectoryChanged += (_, _) => LoadFromStorage();
+            
+            // Initial load
+            LoadFromStorage();
+        }
 
         public PersonalInfo GetPersonalInfo()
         {
@@ -63,6 +44,68 @@ namespace MyPortfolio.Infrastructure.Repositories
         public void SavePersonalInfo(PersonalInfo personalInfo)
         {
             _personalInfo = personalInfo;
+            SaveToStorage(personalInfo);
+        }
+        
+        private void LoadFromStorage()
+        {
+            try
+            {
+                var filePath = Path.Combine(_personalInfoDirectory, $"{_personalInfoPluginName}.json");
+                
+                if (!File.Exists(filePath))
+                {
+                    _logger.LogInformation("No personal info file found at {FilePath}, using default", filePath);
+                    return;
+                }
+                
+                var jsonContent = File.ReadAllText(filePath);
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                
+                var pluginData = JsonSerializer.Deserialize<PersonalInfoPlugin>(jsonContent, options);
+                
+                if (pluginData?.PersonalInfo != null)
+                {
+                    _personalInfo = pluginData.PersonalInfo;
+                    _logger.LogInformation("Loaded personal info from: {FilePath}", filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error loading personal info");
+            }
+        }
+        
+        private void SaveToStorage(PersonalInfo personalInfo)
+        {
+            try
+            {
+                var pluginData = new PersonalInfoPlugin
+                {
+                    Name = _personalInfoPluginName,
+                    Version = "1.0.0",
+                    PersonalInfo = personalInfo
+                };
+                
+                var jsonOptions = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+                
+                var jsonString = JsonSerializer.Serialize(pluginData, jsonOptions);
+                var filePath = Path.Combine(_personalInfoDirectory, $"{_personalInfoPluginName}.json");
+                
+                File.WriteAllText(filePath, jsonString);
+                
+                _logger.LogInformation("Saved personal info to: {FilePath}", filePath);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error saving personal info");
+            }
         }
     }
 } 

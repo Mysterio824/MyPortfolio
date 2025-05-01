@@ -1,0 +1,21 @@
+{
+  "Name": "ProjectPlugin_Null_20250501",
+  "Version": "1.0.0",
+  "Project": 
+  {
+    "Id": "09aa1e0f-b947-4384-87ae-4d9139744c7a",
+    "Title": "Null",
+    "Description": "Null description",
+    "ImageUrl": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
+    "GitHubUrl": "https://github.com/Mysterio824/Android-Final-Project",
+    "LiveDemoUrl": "https://github.com/Mysterio824/Android-Final-Project",
+    "CreatedDate": "2025-05-01T02:04:10.6179388+07:00",
+    "Technologies": [
+      "null"
+    ],
+    "Features": [
+      "null"
+    ]
+  }
+  
+}

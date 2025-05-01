@@ -15,11 +15,6 @@ public class HomeController(
         return View(personalInfo);
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
     public IActionResult About()
     {
         var personalInfo = personalInfoService.GetPersonalInfo();

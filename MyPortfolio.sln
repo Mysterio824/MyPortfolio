@@ -6,9 +6,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPortfolio.Domain", "src/M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPortfolio.Infrastructure", "src/MyPortfolio.Infrastructure\MyPortfolio.Infrastructure.csproj", "{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPortfolio.Presentation", "src/MyPortfolio.Presentation\MyPortfolio.Presentation.csproj", "{D75A51A0-7D96-4519-A43A-2EEE93FA0B4D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{73D09175-01BF-4B90-9631-B3D28A1DDC43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPortfolio.Presentation", "src\MyPortfolio.Presentation\MyPortfolio.Presentation.csproj", "{E3335716-DE15-46F3-8783-B1C72EBD71E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,15 +28,15 @@ Global
 		{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D75A51A0-7D96-4519-A43A-2EEE93FA0B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D75A51A0-7D96-4519-A43A-2EEE93FA0B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D75A51A0-7D96-4519-A43A-2EEE93FA0B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D75A51A0-7D96-4519-A43A-2EEE93FA0B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3335716-DE15-46F3-8783-B1C72EBD71E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3335716-DE15-46F3-8783-B1C72EBD71E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3335716-DE15-46F3-8783-B1C72EBD71E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3335716-DE15-46F3-8783-B1C72EBD71E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{78870EF2-7631-4696-84FB-A656450B3652} = {73D09175-01BF-4B90-9631-B3D28A1DDC43}
 		{4EA20256-B019-4E5F-B9A0-EF8D4942C2F5} = {73D09175-01BF-4B90-9631-B3D28A1DDC43}
 		{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672} = {73D09175-01BF-4B90-9631-B3D28A1DDC43}
-		{D75A51A0-7D96-4519-A43A-2EEE93FA0B4D} = {73D09175-01BF-4B90-9631-B3D28A1DDC43}
+		{E3335716-DE15-46F3-8783-B1C72EBD71E2} = {73D09175-01BF-4B90-9631-B3D28A1DDC43}
 	EndGlobalSection
 EndGlobal

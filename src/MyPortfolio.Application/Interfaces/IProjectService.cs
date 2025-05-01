@@ -7,6 +7,6 @@ namespace MyPortfolio.Application.Interfaces
     {
         List<ProjectDto> GetAllProjects();
         ProjectDto? GetProjectById(Guid id);
-        void SaveProject(Project project);
+        void SaveProject(ProjectDto project);
     }
 } 

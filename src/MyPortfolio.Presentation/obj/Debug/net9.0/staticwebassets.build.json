@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S+g7UGCZPyjum2ZAyvCuYMpmujjKGTkoBR8WCcnUOMU=",
+  "Hash": "h2yUoJAzvlfR34Y/i7tiCY/NzGnjy9Zcq5Ag//eUcm0=",
   "Source": "MyPortfolio.Presentation",
   "BasePath": "_content/MyPortfolio.Presentation",
   "Mode": "Default",
@@ -1459,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "yu78tspv7y",
-      "Integrity": "Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg=",
+      "Fingerprint": "3kkhbyj4yv",
+      "Integrity": "rZraHuaBd8n3aJ5DGwmahDWeo3nU+qHX65d3EGEeDgg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profile-placeholder.jpg"
@@ -1480,8 +1480,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "yu78tspv7y",
-      "Integrity": "Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg=",
+      "Fingerprint": "0ifw0lidui",
+      "Integrity": "iBXLRg5J+jq7Hda1S83W1wJMbtFzYnuEpLOUTkuMgmo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\profile.jpg"
@@ -3408,6 +3408,51 @@
       ]
     },
     {
+      "Route": "images/profile-placeholder.3kkhbyj4yv.jpg",
+      "AssetFile": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\wwwroot\\images\\profile-placeholder.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10992"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rZraHuaBd8n3aJ5DGwmahDWeo3nU+qHX65d3EGEeDgg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 May 2025 04:30:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3kkhbyj4yv"
+        },
+        {
+          "Name": "label",
+          "Value": "images/profile-placeholder.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rZraHuaBd8n3aJ5DGwmahDWeo3nU+qHX65d3EGEeDgg="
+        }
+      ]
+    },
+    {
       "Route": "images/profile-placeholder.jpg",
       "AssetFile": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\wwwroot\\images\\profile-placeholder.jpg",
       "Selectors": [],
@@ -3418,7 +3463,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1"
+          "Value": "10992"
         },
         {
           "Name": "Content-Type",
@@ -3426,11 +3471,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg=\""
+          "Value": "\"rZraHuaBd8n3aJ5DGwmahDWeo3nU+qHX65d3EGEeDgg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 17:54:30 GMT"
+          "Value": "Thu, 01 May 2025 04:30:18 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3440,13 +3485,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg="
+          "Value": "sha256-rZraHuaBd8n3aJ5DGwmahDWeo3nU+qHX65d3EGEeDgg="
         }
       ]
     },
     {
-      "Route": "images/profile-placeholder.yu78tspv7y.jpg",
-      "AssetFile": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\wwwroot\\images\\profile-placeholder.jpg",
+      "Route": "images/profile.0ifw0lidui.jpg",
+      "AssetFile": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\wwwroot\\images\\profile.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3455,7 +3500,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1"
+          "Value": "1719871"
         },
         {
           "Name": "Content-Type",
@@ -3463,11 +3508,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg=\""
+          "Value": "\"iBXLRg5J+jq7Hda1S83W1wJMbtFzYnuEpLOUTkuMgmo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 17:54:30 GMT"
+          "Value": "Thu, 01 May 2025 05:17:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3477,15 +3522,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "yu78tspv7y"
+          "Value": "0ifw0lidui"
         },
         {
           "Name": "label",
-          "Value": "images/profile-placeholder.jpg"
+          "Value": "images/profile.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg="
+          "Value": "sha256-iBXLRg5J+jq7Hda1S83W1wJMbtFzYnuEpLOUTkuMgmo="
         }
       ]
     },
@@ -3500,7 +3545,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1"
+          "Value": "1719871"
         },
         {
           "Name": "Content-Type",
@@ -3508,11 +3553,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg=\""
+          "Value": "\"iBXLRg5J+jq7Hda1S83W1wJMbtFzYnuEpLOUTkuMgmo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:17:30 GMT"
+          "Value": "Thu, 01 May 2025 05:17:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3522,52 +3567,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg="
-        }
-      ]
-    },
-    {
-      "Route": "images/profile.yu78tspv7y.jpg",
-      "AssetFile": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\wwwroot\\images\\profile.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 30 Apr 2025 18:17:30 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "yu78tspv7y"
-        },
-        {
-          "Name": "label",
-          "Value": "images/profile.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Nqnn8clbgv+5l0PgxcTOldg8mkMKrFn4TvPL+rYUUGg="
+          "Value": "sha256-iBXLRg5J+jq7Hda1S83W1wJMbtFzYnuEpLOUTkuMgmo="
         }
       ]
     },

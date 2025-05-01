@@ -718,7 +718,10 @@
         },
         "runtime": {
           "bin/placeholder/MyPortfolio.Infrastructure.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },

@@ -2,50 +2,32 @@ using AutoMapper;
 using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
 using MyPortfolio.Domain.Entities;
-using MyPortfolio.Domain.Interfaces;
+using MyPortfolio.Domain.Repositories;
 
 namespace MyPortfolio.Application.Services
 {
     public class ProjectService(
-        IProjectPlugin projectPlugin, 
-        IPluginLoader pluginLoader,
+        IProjectRepository projectRepository,
         IMapper mapper
     ) : IProjectService
     {
-    private readonly List<IPlugin> _plugins =
-        pluginLoader.LoadPlugins(AppDomain.CurrentDomain.BaseDirectory + "/Plugins");
-
-    public List<ProjectDto> GetAllProjects()
-    {
-        var projects = projectPlugin.GetAllProjects();
-
-        foreach (var plugin in _plugins)
+        public List<ProjectDto> GetAllProjects()
         {
-            projects.AddRange(plugin.GetProjects());
+            var projects = projectRepository.GetAllProjects();
+            return mapper.Map<List<ProjectDto>>(projects);
         }
 
-        return mapper.Map<List<ProjectDto>>(projects);
-    }
-
-    public ProjectDto? GetProjectById(Guid id)
-    {
-        var project = projectPlugin.GetProjectById(id);
-
-        if (project != null) return mapper.Map<ProjectDto>(project);
-        // Try to find in plugins
-        foreach (var plugin in _plugins)
+        public ProjectDto? GetProjectById(Guid id)
         {
-            var pluginProject = plugin.GetProjects().FirstOrDefault(p => p.Id == id);
-            if (pluginProject != null)
-            {
-                return mapper.Map<ProjectDto>(pluginProject);
-            }
+            var project = projectRepository.GetProjectById(id);
+
+            return project != null ? mapper.Map<ProjectDto>(project) : null;
         }
 
-        return null;
-    }
-
-    public void SaveProject(Project project)
-        => projectPlugin.SaveProject(project);
+        public void SaveProject(ProjectDto projectDto)
+        {
+            var project = mapper.Map<Project>(projectDto);
+            projectRepository.SaveProject(project);
+        }
     }
 } 

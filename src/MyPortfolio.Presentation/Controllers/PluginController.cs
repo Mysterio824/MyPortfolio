@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
-using MyPortfolio.Domain.Entities;
 using MyPortfolio.Presentation.Models;
 
 namespace MyPortfolio.Presentation.Controllers
@@ -8,7 +8,6 @@ namespace MyPortfolio.Presentation.Controllers
     public class PluginController(
         IPluginCompilerService pluginCompilerService,
         IProjectService projectService,
-        IWebHostEnvironment webHostEnvironment,
         ILogger<PluginController> logger)
         : Controller
     {
@@ -26,13 +25,7 @@ namespace MyPortfolio.Presentation.Controllers
             if (!ModelState.IsValid) return View(model);
             try
             {
-                var project = new Project(
-                    model.Title,
-                    model.Description,
-                    !string.IsNullOrWhiteSpace(model.ImageUrl) ? model.ImageUrl : "/images/projects/default.jpg",
-                    !string.IsNullOrWhiteSpace(model.GitHubUrl) ? model.GitHubUrl : "https://github.com",
-                    !string.IsNullOrWhiteSpace(model.LiveDemoUrl) ? model.LiveDemoUrl : "#"
-                )
+                var project = new ProjectDto
                 {
                     Technologies = model.Technologies
                         .Split(',')
@@ -43,7 +36,12 @@ namespace MyPortfolio.Presentation.Controllers
                         .Split(',')
                         .Select(f => f.Trim())
                         .Where(f => !string.IsNullOrWhiteSpace(f))
-                        .ToList()
+                        .ToList(),
+                    Title = model.Title,
+                    Description = model.Description,
+                    ImageUrl = !string.IsNullOrWhiteSpace(model.ImageUrl) ? model.ImageUrl : "/images/projects/default.jpg",
+                    GitHubUrl = !string.IsNullOrWhiteSpace(model.GitHubUrl) ? model.GitHubUrl : "https://github.com",
+                    LiveDemoUrl = !string.IsNullOrWhiteSpace(model.LiveDemoUrl) ? model.LiveDemoUrl : "#"
                 };
 
                 if (!pluginCompilerService.ValidateProject(project))
@@ -51,22 +49,18 @@ namespace MyPortfolio.Presentation.Controllers
                     ModelState.AddModelError("", "Project validation failed. Please check all fields.");
                     return View(model);
                 }
-
-                // Save the project first
-                projectService.SaveProject(project);
-
-                // Ensure plugins directory exists
-                var pluginsDirectory = Path.Combine(webHostEnvironment.ContentRootPath, "Plugins");
-                if (!Directory.Exists(pluginsDirectory))
-                {
-                    Directory.CreateDirectory(pluginsDirectory);
-                }
-
+                
                 // Compile the plugin
                 var safeName = model.Title.Replace(" ", "").Replace("-", "").Replace(".", "");
                 var pluginName = $"ProjectPlugin_{safeName}_{DateTime.Now:yyyyMMdd}";
-                logger.LogInformation("Creating plugin {PluginName} in directory {PluginsDirectory}", pluginName, pluginsDirectory);
-
+                
+                // The plugin compiler will handle storing the file in the correct location
+                var pluginFilePath = pluginCompilerService.CompileProject(
+                    project,
+                    pluginName);
+                
+                logger.LogInformation("Created plugin {PluginName} at {PluginFilePath}", pluginName, pluginFilePath);
+                
                 TempData["SuccessMessage"] = $"Project '{model.Title}' created successfully!";
                 return RedirectToAction("Index", "Projects");
             }
