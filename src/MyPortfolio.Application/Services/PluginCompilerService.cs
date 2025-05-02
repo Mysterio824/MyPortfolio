@@ -1,4 +1,3 @@
-using System.Text.Json;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using MyPortfolio.Application.DTOs;
@@ -14,7 +13,7 @@ namespace MyPortfolio.Application.Services
         IProjectRepository projectRepository)  
         : IPluginCompilerService
     {
-        public string CompileProject(ProjectDto projectDto, string pluginName)
+        public string CompileProject(ProjectDto projectDto)
         {
             var project = mapper.Map<Project>(projectDto);
             
@@ -25,9 +24,7 @@ namespace MyPortfolio.Application.Services
 
             try
             {
-                
-                // Store the plugin using the storage service
-                var filePath = projectRepository.CreateProject(project, pluginName);
+                var filePath = projectRepository.CreateProject(project);
                 
                 logger.LogInformation("Created plugin JSON data at {JsonFilePath}", filePath);
                 
@@ -50,7 +47,7 @@ namespace MyPortfolio.Application.Services
                 return false;
 
             // If technologies are empty, add a default one
-            if (!project.Technologies.Any())
+            if (project.Technologies.Count == 0)
             {
                 project.Technologies.Add("Unknown");
             }

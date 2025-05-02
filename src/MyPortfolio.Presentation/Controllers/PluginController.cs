@@ -14,7 +14,12 @@ namespace MyPortfolio.Presentation.Controllers
         // GET: Plugin/Create
         public IActionResult Create()
         {
-            return View(new PluginCreateViewModel());
+            var model = new PluginCreateViewModel
+            {
+                Technologies = new List<string> { "" },
+                Features = new List<string>()
+            };
+            return View(model);
         }
 
         // POST: Plugin/Create
@@ -27,16 +32,8 @@ namespace MyPortfolio.Presentation.Controllers
             {
                 var project = new ProjectDto
                 {
-                    Technologies = model.Technologies
-                        .Split(',')
-                        .Select(t => t.Trim())
-                        .Where(t => !string.IsNullOrWhiteSpace(t))
-                        .ToList(),
-                    Features = model.Features
-                        .Split(',')
-                        .Select(f => f.Trim())
-                        .Where(f => !string.IsNullOrWhiteSpace(f))
-                        .ToList(),
+                    Technologies = model.Technologies ?? new List<string>(),
+                    Features = model.Features ?? new List<string>(),
                     Title = model.Title,
                     Description = model.Description,
                     ImageUrl = !string.IsNullOrWhiteSpace(model.ImageUrl) ? model.ImageUrl : "/images/projects/default.jpg",
@@ -51,13 +48,11 @@ namespace MyPortfolio.Presentation.Controllers
                 }
                 
                 // Compile the plugin
-                var safeName = model.Title.Replace(" ", "").Replace("-", "").Replace(".", "");
-                var pluginName = $"ProjectPlugin_{safeName}_{DateTime.Now:yyyyMMdd}";
+                var safeName = project.Title.Replace(" ", "").Replace("-", "").Replace(".", "");
+                var pluginName = $"ProjectPlugin_{safeName}";
                 
                 // The plugin compiler will handle storing the file in the correct location
-                var pluginFilePath = pluginCompilerService.CompileProject(
-                    project,
-                    pluginName);
+                var pluginFilePath = pluginCompilerService.CompileProject(project);
                 
                 logger.LogInformation("Created plugin {PluginName} at {PluginFilePath}", pluginName, pluginFilePath);
                 

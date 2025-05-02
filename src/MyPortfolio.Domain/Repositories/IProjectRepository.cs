@@ -7,6 +7,6 @@ namespace MyPortfolio.Domain.Repositories
         List<Project> GetAllProjects();
         Project? GetProjectById(Guid id);
         void SaveProject(Project project);
-        string CreateProject(Project project, string pluginName);
+        string CreateProject(Project project);
     }
 } 

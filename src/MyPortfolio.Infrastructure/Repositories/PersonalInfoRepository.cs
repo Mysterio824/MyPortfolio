@@ -86,7 +86,6 @@ namespace MyPortfolio.Infrastructure.Repositories
                 var pluginData = new PersonalInfoPlugin
                 {
                     Name = _personalInfoPluginName,
-                    Version = "1.0.0",
                     PersonalInfo = personalInfo
                 };
                 

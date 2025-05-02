@@ -55,8 +55,6 @@ namespace MyPortfolio.Infrastructure.Repositories
 
         public Project? GetProjectById(Guid id)
         {
-            _logger.LogInformation($"Have: {_projects.Count}");
-            // Look in local projects first
             if (_projects.FirstOrDefault(p => p.Id == id) is { } project)
             {
                 return project;
@@ -67,19 +65,15 @@ namespace MyPortfolio.Infrastructure.Repositories
 
         public void SaveProject(Project project)
         {
-            var existingProject = _projects.FirstOrDefault(p => p.Id == project.Id);
-            if (existingProject != null)
-            {
-                // Update existing project
-                _projects.Remove(existingProject);
-            }
-            
-            _projects.Add(project);
+            CreateProject(project);
+            ReloadPlugins();
         }
 
-        public string CreateProject(Project project, string pluginName)
+        public string CreateProject(Project project)
         {
-            
+            var safeName = project.Title.Replace(" ", "").Replace("-", "").Replace(".", "");
+            var pluginName = $"ProjectPlugin_{safeName}";
+
             var jsonOptions = new JsonSerializerOptions
             {
                 WriteIndented = true
@@ -88,7 +82,6 @@ namespace MyPortfolio.Infrastructure.Repositories
             var pluginData = new ProjectPlugin
             {
                 Name = pluginName,
-                Version = "1.0.0",
                 Project = project
             };
                 

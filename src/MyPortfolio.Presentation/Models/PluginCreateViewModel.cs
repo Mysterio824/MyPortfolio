@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace MyPortfolio.Presentation.Models
 {
@@ -23,10 +24,10 @@ namespace MyPortfolio.Presentation.Models
         public string LiveDemoUrl { get; set; }
 
         [Required]
-        [Display(Name = "Technologies (comma separated)")]
-        public string Technologies { get; set; }
+        [Display(Name = "Technologies")]
+        public List<string> Technologies { get; set; } = new List<string>();
 
-        [Display(Name = "Features (comma separated)")]
-        public string Features { get; set; }
+        [Display(Name = "Features")]
+        public List<string> Features { get; set; } = new List<string>();
     }
 } 

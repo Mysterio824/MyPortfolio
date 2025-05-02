@@ -17,6 +17,11 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\images\" />
+      <Folder Include="wwwroot\images\projects\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
     </ItemGroup>
 
 </Project>

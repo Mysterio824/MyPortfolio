@@ -239,13 +239,13 @@
             });
             
             // Function to reindex items after removal
-            function reindexItems(container, itemClass, fieldName) {
+            function reindexItems(container, itemClass, _) {
                 $(container + " " + itemClass).each(function (index) {
                     const inputs = $(this).find("input, textarea");
                     inputs.each(function() {
                         const currentName = $(this).attr("name");
                         if (currentName) {
-                            const newName = currentName.replace(/\[\d+\]/g, `[${index}]`);
+                            const newName = currentName.replace(/\[\d+/g, `[${index}]`);
                             $(this).attr("name", newName);
                         }
                     });

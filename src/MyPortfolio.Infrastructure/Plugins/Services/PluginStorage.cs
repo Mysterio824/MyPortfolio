@@ -42,8 +42,15 @@ namespace MyPortfolio.Infrastructure.Plugins.Services
 
         private void EnsureDirectoryExists()
         {
-            if (Directory.Exists(_pluginDirectory)) return;
-            Directory.CreateDirectory(_pluginDirectory);
+            if (!Directory.Exists(_pluginDirectory)) 
+                Directory.CreateDirectory(_pluginDirectory);
+            var path = Path.Combine(_pluginDirectory, "Projects");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(_pluginDirectory);
+            path =  Path.Combine(_pluginDirectory, "PersonalInfo");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            
             _logger.LogInformation("Created plugin directory: {PluginDirectory}", _pluginDirectory);
         }
 
@@ -52,7 +59,8 @@ namespace MyPortfolio.Infrastructure.Plugins.Services
             EnsureDirectoryExists();
             
             // Create the file path
-            var filePath = Path.Combine(_pluginDirectory, $"{pluginName}.json");
+            var path = Path.Combine(_pluginDirectory, "Projects");
+            var filePath = Path.Combine(path, $"{pluginName}.json");
             
             // Write the content to the file
             File.WriteAllText(filePath, serializedContent);

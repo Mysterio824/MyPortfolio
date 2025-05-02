@@ -1,0 +1,23 @@
+{
+  "Name": "ProjectPlugin_Hacktok",
+  "Project": {
+    "Id": "09aa1e0f-b947-4384-875e-4d9139744c7a",
+    "Title": "Hacktok",
+    "Description": "Android Social Media application copy Facebook",
+    "ImageUrl": "https://store-images.s-microsoft.com/image/apps.30645.9007199266245907.cb06f1f9-9154-408e-b4ef-d19f2325893b.ac3b465e-4384-42a8-9142-901c0405e1bc",
+    "GitHubUrl": "https://github.com/Mysterio824/Android-Final-Project",
+    "LiveDemoUrl": "https://github.com/Mysterio824/Android-Final-Project",
+    "CreatedDate": "2025-05-03T00:29:53.6001023+07:00",
+    "Technologies": [
+      "kotlin",
+      "Firebase"
+    ],
+    "Features": [
+      "real-time chatting",
+      "post",
+      "drop emoji/comment",
+      "FCM notification",
+      "Oauth (google)"
+    ]
+  }
+}

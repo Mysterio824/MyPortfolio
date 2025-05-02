@@ -6,14 +6,12 @@ namespace MyPortfolio.Presentation.Controllers
 {
     public class ProjectsController(IProjectService projectService) : Controller
     {
-        // GET: Projects
         public IActionResult Index()
         {
             var projects = projectService.GetAllProjects();
             return View(projects);
         }
 
-        // GET: Projects/Details/5
         public IActionResult Details(Guid id)
         {
             var project = projectService.GetProjectById(id);
@@ -25,7 +23,6 @@ namespace MyPortfolio.Presentation.Controllers
             return View(project);
         }
         
-        // GET: Projects/Edit/5
         public IActionResult Edit(Guid id)
         {
             var project = projectService.GetProjectById(id);
@@ -37,11 +34,16 @@ namespace MyPortfolio.Presentation.Controllers
             return View(project);
         }
         
-        // POST: Projects/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(ProjectDto project)
         {
+            if (!ModelState.IsValid && ModelState.ContainsKey("CreatedDate"))
+            {
+                ModelState.Remove("CreatedDate");
+                project.CreatedDate = DateTime.Now;
+            }
+
             if (!ModelState.IsValid)
             {
                 return View(project);
