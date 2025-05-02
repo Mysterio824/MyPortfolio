@@ -2,13 +2,13 @@
   "Name": "PersonalInfoPlugin",
   "Version": "1.0.0",
   "PersonalInfo": {
-    "Name": "John Doe",
+    "Name": "Nguy\u1EC5n H\u1EEFu Minh",
     "Title": "Full Stack Developer",
     "Summary": "Passionate software developer with expertise in .NET Core, ASP.NET MVC, and Clean Architecture principles. I enjoy creating efficient, maintainable, and scalable applications.",
     "ProfilePictureUrl": "/images/profile.jpg",
-    "Email": "john.doe@example.com",
-    "LinkedInUrl": "https://linkedin.com/in/johndoe",
-    "GitHubUrl": "https://github.com/johndoe",
+    "Email": "ngueynhuuminh8204@gmail.com",
+    "LinkedInUrl": "https://www.linkedin.com/in/h%E1%BB%AFu-minh-nguy%E1%BB%85n-9bb88b274/",
+    "GitHubUrl": "https://github.com/Mysterio824",
     "Skills": [
       "C#",
       ".NET Core",
@@ -20,30 +20,12 @@
       "JavaScript",
       "SQL Server"
     ],
-    "Experiences": [
-      {
-        "Company": "ABC Corporation",
-        "Position": "Senior Developer",
-        "Duration": "2021 - Present",
-        "Description": "Developing enterprise applications using .NET technologies"
-      },
-      {
-        "Company": "XYZ Solutions",
-        "Position": "Software Developer",
-        "Duration": "2018 - 2021",
-        "Description": "Worked on various web application projects"
-      }
-    ],
+    "Experiences": [],
     "Education": [
       {
         "Institution": "University of Science",
         "Degree": "Master of Computer Science",
-        "Duration": "2016 - 2018"
-      },
-      {
-        "Institution": "City College",
-        "Degree": "Bachelor of Computer Science",
-        "Duration": "2012 - 2016"
+        "Duration": "2022 - Present"
       }
     ]
   }

@@ -42,7 +42,10 @@
                                     <span class="badge bg-secondary">+@(project.Technologies.Count - 3)</span>
                                 }
                             </div>
-                            <a asp-action="Details" asp-route-id="@project.Id" class="btn btn-outline-primary stretched-link">View Details</a>
+                            <div class="d-flex gap-2">
+                                <a asp-action="Details" asp-route-id="@project.Id" class="btn btn-outline-primary">View Details</a>
+                                <a asp-action="Edit" asp-route-id="@project.Id" class="btn btn-outline-secondary">Edit</a>
+                            </div>
                         </div>
                         <div class="card-footer text-muted small">
                             Created: @project.CreatedDate.ToString("MMMM yyyy")

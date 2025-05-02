@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
 
 namespace MyPortfolio.Presentation.Controllers
@@ -22,6 +23,41 @@ namespace MyPortfolio.Presentation.Controllers
             }
 
             return View(project);
+        }
+        
+        // GET: Projects/Edit/5
+        public IActionResult Edit(Guid id)
+        {
+            var project = projectService.GetProjectById(id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+
+            return View(project);
+        }
+        
+        // POST: Projects/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(ProjectDto project)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(project);
+            }
+            
+            try
+            {
+                projectService.SaveProject(project);
+                TempData["SuccessMessage"] = "Project updated successfully!";
+                return RedirectToAction(nameof(Details), new { id = project.Id });
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Error updating project: {ex.Message}");
+                return View(project);
+            }
         }
     }
 } 

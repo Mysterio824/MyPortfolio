@@ -82,49 +82,76 @@
                 </div>
 
                 <div class="card shadow-sm mb-4">
-                    <div class="card-header">Education & Experience</div>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>Work Experience</div>
+                        <button type="button" class="btn btn-sm btn-primary" id="addExperience">
+                            <i class="bi bi-plus"></i> Add Experience
+                        </button>
+                    </div>
                     <div class="card-body">
-                        <p class="fw-bold">Experiences:</p>
-                        @for (int i = 0; i < Model.Experiences.Count; i++)
-                        {
-                            <div class="border p-3 mb-3">
-                                <div class="mb-2">
-                                    <label class="form-label">Company</label>
-                                    <input name="Experiences[@i].Company" value="@Model.Experiences[i].Company" class="form-control" />
+                        <div id="experiencesContainer">
+                            @for (int i = 0; i < Model.Experiences.Count; i++)
+                            {
+                                <div class="border p-3 mb-3 experience-item">
+                                    <div class="d-flex justify-content-end mb-2">
+                                        <button type="button" class="btn btn-sm btn-outline-danger remove-experience">
+                                            <i class="bi bi-trash"></i> Remove
+                                        </button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Company</label>
+                                        <input name="Experiences[@i].Company" value="@Model.Experiences[i].Company" class="form-control" />
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Position</label>
+                                        <input name="Experiences[@i].Position" value="@Model.Experiences[i].Position" class="form-control" />
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Duration</label>
+                                        <input name="Experiences[@i].Duration" value="@Model.Experiences[i].Duration" class="form-control" />
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Description</label>
+                                        <textarea name="Experiences[@i].Description" class="form-control" rows="2">@Model.Experiences[i].Description</textarea>
+                                    </div>
                                 </div>
-                                <div class="mb-2">
-                                    <label class="form-label">Position</label>
-                                    <input name="Experiences[@i].Position" value="@Model.Experiences[i].Position" class="form-control" />
-                                </div>
-                                <div class="mb-2">
-                                    <label class="form-label">Duration</label>
-                                    <input name="Experiences[@i].Duration" value="@Model.Experiences[i].Duration" class="form-control" />
-                                </div>
-                                <div class="mb-2">
-                                    <label class="form-label">Description</label>
-                                    <textarea name="Experiences[@i].Description" class="form-control" rows="2">@Model.Experiences[i].Description</textarea>
-                                </div>
-                            </div>
-                        }
+                            }
+                        </div>
+                    </div>
+                </div>
 
-                        <p class="fw-bold mt-4">Education:</p>
-                        @for (int i = 0; i < Model.Education.Count; i++)
-                        {
-                            <div class="border p-3 mb-3">
-                                <div class="mb-2">
-                                    <label class="form-label">Institution</label>
-                                    <input name="Education[@i].Institution" value="@Model.Education[i].Institution" class="form-control" />
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>Education</div>
+                        <button type="button" class="btn btn-sm btn-primary" id="addEducation">
+                            <i class="bi bi-plus"></i> Add Education
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="educationContainer">
+                            @for (int i = 0; i < Model.Education.Count; i++)
+                            {
+                                <div class="border p-3 mb-3 education-item">
+                                    <div class="d-flex justify-content-end mb-2">
+                                        <button type="button" class="btn btn-sm btn-outline-danger remove-education">
+                                            <i class="bi bi-trash"></i> Remove
+                                        </button>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Institution</label>
+                                        <input name="Education[@i].Institution" value="@Model.Education[i].Institution" class="form-control" />
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Degree</label>
+                                        <input name="Education[@i].Degree" value="@Model.Education[i].Degree" class="form-control" />
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Duration</label>
+                                        <input name="Education[@i].Duration" value="@Model.Education[i].Duration" class="form-control" />
+                                    </div>
                                 </div>
-                                <div class="mb-2">
-                                    <label class="form-label">Degree</label>
-                                    <input name="Education[@i].Degree" value="@Model.Education[i].Degree" class="form-control" />
-                                </div>
-                                <div class="mb-2">
-                                    <label class="form-label">Duration</label>
-                                    <input name="Education[@i].Duration" value="@Model.Education[i].Duration" class="form-control" />
-                                </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,4 +166,91 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Add work experience
+            $("#addExperience").click(function () {
+                const index = $(".experience-item").length;
+                const newItem = `
+                    <div class="border p-3 mb-3 experience-item">
+                        <div class="d-flex justify-content-end mb-2">
+                            <button type="button" class="btn btn-sm btn-outline-danger remove-experience">
+                                <i class="bi bi-trash"></i> Remove
+                            </button>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Company</label>
+                            <input name="Experiences[${index}].Company" class="form-control" />
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Position</label>
+                            <input name="Experiences[${index}].Position" class="form-control" />
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Duration</label>
+                            <input name="Experiences[${index}].Duration" class="form-control" />
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Description</label>
+                            <textarea name="Experiences[${index}].Description" class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+                `;
+                $("#experiencesContainer").append(newItem);
+            });
+
+            // Add education
+            $("#addEducation").click(function () {
+                const index = $(".education-item").length;
+                const newItem = `
+                    <div class="border p-3 mb-3 education-item">
+                        <div class="d-flex justify-content-end mb-2">
+                            <button type="button" class="btn btn-sm btn-outline-danger remove-education">
+                                <i class="bi bi-trash"></i> Remove
+                            </button>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Institution</label>
+                            <input name="Education[${index}].Institution" class="form-control" />
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Degree</label>
+                            <input name="Education[${index}].Degree" class="form-control" />
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Duration</label>
+                            <input name="Education[${index}].Duration" class="form-control" />
+                        </div>
+                    </div>
+                `;
+                $("#educationContainer").append(newItem);
+            });
+
+            // Remove work experience
+            $(document).on("click", ".remove-experience", function () {
+                $(this).closest(".experience-item").remove();
+                reindexItems("#experiencesContainer", ".experience-item", "Experiences");
+            });
+
+            // Remove education
+            $(document).on("click", ".remove-education", function () {
+                $(this).closest(".education-item").remove();
+                reindexItems("#educationContainer", ".education-item", "Education");
+            });
+            
+            // Function to reindex items after removal
+            function reindexItems(container, itemClass, fieldName) {
+                $(container + " " + itemClass).each(function (index) {
+                    const inputs = $(this).find("input, textarea");
+                    inputs.each(function() {
+                        const currentName = $(this).attr("name");
+                        if (currentName) {
+                            const newName = currentName.replace(/\[\d+\]/g, `[${index}]`);
+                            $(this).attr("name", newName);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 } 

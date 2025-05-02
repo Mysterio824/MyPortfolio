@@ -1,0 +1,163 @@
+@model MyPortfolio.Application.DTOs.ProjectDto
+@{
+    ViewData["Title"] = "Edit Project";
+}
+
+<div class="container">
+    <h1 class="mb-4">Edit Project</h1>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreatedDate" />
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header">Basic Information</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label">Title</label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label">Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="ImageUrl" class="form-label">Image URL</label>
+                            <input asp-for="ImageUrl" class="form-control" />
+                            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="GitHubUrl" class="form-label">GitHub URL</label>
+                            <input asp-for="GitHubUrl" class="form-control" />
+                            <span asp-validation-for="GitHubUrl" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="LiveDemoUrl" class="form-label">Live Demo URL</label>
+                            <input asp-for="LiveDemoUrl" class="form-control" />
+                            <span asp-validation-for="LiveDemoUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>Technologies</div>
+                        <button type="button" class="btn btn-sm btn-primary" id="addTechnology">
+                            <i class="bi bi-plus"></i> Add Technology
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="technologiesContainer">
+                            @for (int i = 0; i < Model.Technologies.Count; i++)
+                            {
+                                <div class="input-group mb-2 technology-item">
+                                    <input type="text" name="Technologies[@i]" class="form-control" value="@Model.Technologies[i]" />
+                                    <button type="button" class="btn btn-outline-danger remove-item">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>Features</div>
+                        <button type="button" class="btn btn-sm btn-primary" id="addFeature">
+                            <i class="bi bi-plus"></i> Add Feature
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="featuresContainer">
+                            @for (int i = 0; i < Model.Features.Count; i++)
+                            {
+                                <div class="input-group mb-2 feature-item">
+                                    <input type="text" name="Features[@i]" class="form-control" value="@Model.Features[i]" />
+                                    <button type="button" class="btn btn-outline-danger remove-item">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
+            <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary me-md-2">Cancel</a>
+            <button type="submit" class="btn btn-primary">Save Project</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Add technology
+            $("#addTechnology").click(function () {
+                const index = $(".technology-item").length;
+                const newItem = `
+                    <div class="input-group mb-2 technology-item">
+                        <input type="text" name="Technologies[${index}]" class="form-control" placeholder="Enter technology" />
+                        <button type="button" class="btn btn-outline-danger remove-item">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                `;
+                $("#technologiesContainer").append(newItem);
+            });
+
+            // Add feature
+            $("#addFeature").click(function () {
+                const index = $(".feature-item").length;
+                const newItem = `
+                    <div class="input-group mb-2 feature-item">
+                        <input type="text" name="Features[${index}]" class="form-control" placeholder="Enter feature" />
+                        <button type="button" class="btn btn-outline-danger remove-item">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                `;
+                $("#featuresContainer").append(newItem);
+            });
+
+            // Remove item (works for both technology and feature)
+            $(document).on("click", ".remove-item", function () {
+                $(this).closest(".input-group").remove();
+                
+                // Reindex the remaining items
+                reindexItems("#technologiesContainer", "Technologies");
+                reindexItems("#featuresContainer", "Features");
+            });
+
+            // Function to reindex items after removal
+            function reindexItems(container, fieldName) {
+                $(container + " .input-group").each(function (index) {
+                    const input = $(this).find("input");
+                    input.attr("name", `${fieldName}[${index}]`);
+                });
+            }
+        });
+    </script>
+} 
