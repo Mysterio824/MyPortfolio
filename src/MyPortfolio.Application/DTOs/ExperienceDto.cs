@@ -2,8 +2,8 @@
 
 public class ExperienceDto
 {
-    public required string Company { get; set; }
-    public required string Position { get; set; }
-    public required string Duration { get; set; }
-    public required string Description { get; set; }
+    public required string Company { get; init; }
+    public required string Position { get; init; }
+    public required string Duration { get; init; }
+    public required string Description { get; init; }
 }

@@ -1,5 +1,4 @@
 ﻿using MyPortfolio.Application.DTOs;
-using MyPortfolio.Domain.Entities;
 
 namespace MyPortfolio.Application.Interfaces
 {

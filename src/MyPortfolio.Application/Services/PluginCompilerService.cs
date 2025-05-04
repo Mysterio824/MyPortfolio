@@ -10,8 +10,8 @@ namespace MyPortfolio.Application.Services
     public class PluginCompilerService(
         ILogger<PluginCompilerService> logger,
         IMapper mapper,
-        IProjectRepository projectRepository)  
-        : IPluginCompilerService
+        IProjectRepository projectRepository
+    ) : IPluginCompilerService
     {
         public string CompileProject(ProjectDto projectDto)
         {
@@ -39,14 +39,12 @@ namespace MyPortfolio.Application.Services
 
         public bool ValidateProject(ProjectDto project)
         {
-            // Basic validation
             if (string.IsNullOrWhiteSpace(project.Title))
                 return false;
 
             if (string.IsNullOrWhiteSpace(project.Description))
                 return false;
 
-            // If technologies are empty, add a default one
             if (project.Technologies.Count == 0)
             {
                 project.Technologies.Add("Unknown");

@@ -22,17 +22,9 @@ namespace MyPortfolio.Infrastructure.Repositories
             _logger = logger;
 
             _personalInfoDirectory = pluginStorage.GetPersonalInfoDirectoryPath();
-            
-            if (!Directory.Exists(_personalInfoDirectory))
-            {
-                Directory.CreateDirectory(_personalInfoDirectory);
-                _logger.LogInformation("Created personal info directory: {Directory}", _personalInfoDirectory);
-            }
 
-            // Subscribe to plugin directory changes
             pluginWatcher.PluginDirectoryChanged += (_, _) => LoadFromStorage();
             
-            // Initial load
             LoadFromStorage();
         }
 

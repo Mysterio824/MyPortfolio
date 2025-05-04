@@ -2,7 +2,7 @@
 
 public class EducationDto
 {
-    public required string Institution { get; set; }
-    public required string Degree { get; set; }
-    public required string Duration { get; set; }
+    public required string Institution { get; init; }
+    public required string Degree { get; init; }
+    public required string Duration { get; init; }
 }

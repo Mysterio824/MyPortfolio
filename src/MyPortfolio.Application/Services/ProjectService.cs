@@ -1,33 +1,34 @@
 using AutoMapper;
+using MyPortfolio.Application.CQRS.Commands;
+using MyPortfolio.Application.CQRS.Queries;
 using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
-using MyPortfolio.Domain.Entities;
-using MyPortfolio.Domain.Repositories;
+using MyPortfolio.Application.Interfaces.CQRS;
 
 namespace MyPortfolio.Application.Services
 {
     public class ProjectService(
-        IProjectRepository projectRepository,
+        IQueryHandler<GetAllProjectsQuery, GetAllProjectsQueryResult> getAllProjectsHandler,
+        IQueryHandler<GetProjectByIdQuery, GetProjectByIdQueryResult> getProjectByIdHandler,
+        ICommandHandler<SaveProjectCommand> saveProjectHandler,
         IMapper mapper
     ) : IProjectService
     {
         public List<ProjectDto> GetAllProjects()
         {
-            var projects = projectRepository.GetAllProjects();
-            return mapper.Map<List<ProjectDto>>(projects);
+            var result = getAllProjectsHandler.Handle(new GetAllProjectsQuery());
+            return mapper.Map<List<ProjectDto>>(result.Projects);
         }
 
         public ProjectDto? GetProjectById(Guid id)
         {
-            var project = projectRepository.GetProjectById(id);
-
-            return project != null ? mapper.Map<ProjectDto>(project) : null;
+            var result = getProjectByIdHandler.Handle(new GetProjectByIdQuery(id));
+            return result.Project != null ? mapper.Map<ProjectDto>(result.Project) : null;
         }
 
         public void SaveProject(ProjectDto projectDto)
         {
-            var project = mapper.Map<Project>(projectDto);
-            projectRepository.SaveProject(project);
+            saveProjectHandler.Handle(new SaveProjectCommand(projectDto));
         }
     }
 } 

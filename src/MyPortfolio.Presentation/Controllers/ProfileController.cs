@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.Application.DTOs;
 using MyPortfolio.Application.Interfaces;
 using MyPortfolio.Domain.Entities;
-using MyPortfolio.Presentation.Models;
 
 namespace MyPortfolio.Presentation.Controllers
 {

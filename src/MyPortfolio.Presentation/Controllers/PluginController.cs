@@ -7,17 +7,17 @@ namespace MyPortfolio.Presentation.Controllers
 {
     public class PluginController(
         IPluginCompilerService pluginCompilerService,
-        IProjectService projectService,
         ILogger<PluginController> logger)
         : Controller
     {
         // GET: Plugin/Create
+        [HttpGet]
         public IActionResult Create()
         {
             var model = new PluginCreateViewModel
             {
-                Technologies = new List<string> { "" },
-                Features = new List<string>()
+                Technologies = [""],
+                Features = []
             };
             return View(model);
         }
@@ -32,8 +32,8 @@ namespace MyPortfolio.Presentation.Controllers
             {
                 var project = new ProjectDto
                 {
-                    Technologies = model.Technologies ?? new List<string>(),
-                    Features = model.Features ?? new List<string>(),
+                    Technologies = model.Technologies,
+                    Features = model.Features,
                     Title = model.Title,
                     Description = model.Description,
                     ImageUrl = !string.IsNullOrWhiteSpace(model.ImageUrl) ? model.ImageUrl : "/images/projects/default.jpg",

@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E3335716-DE15-46F3-8783-B1C72EBD71E2}|src\\MyPortfolio.Presentation\\MyPortfolio.Presentation.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3335716-DE15-46F3-8783-B1C72EBD71E2}|src\\MyPortfolio.Presentation\\MyPortfolio.Presentation.csproj|solutionrelative:src\\myportfolio.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.application\\dependencyinjection\\applicationservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|solutionrelative:src\\myportfolio.application\\dependencyinjection\\applicationservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.infrastructure\\dependencyinjection\\infrastructureservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|solutionrelative:src\\myportfolio.infrastructure\\dependencyinjection\\infrastructureservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.application\\services\\plugincompilerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|solutionrelative:src\\myportfolio.application\\services\\plugincompilerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.infrastructure\\plugins\\services\\pluginmonitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|solutionrelative:src\\myportfolio.infrastructure\\plugins\\services\\pluginmonitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.infrastructure\\plugins\\services\\pluginloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|solutionrelative:src\\myportfolio.infrastructure\\plugins\\services\\pluginloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.application\\interfaces\\cqrs\\icommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|solutionrelative:src\\myportfolio.application\\interfaces\\cqrs\\icommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.application\\interfaces\\cqrs\\iqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78870EF2-7631-4696-84FB-A656450B3652}|src\\MyPortfolio.Application\\MyPortfolio.Application.csproj|solutionrelative:src\\myportfolio.application\\interfaces\\cqrs\\iqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|c:\\users\\asus\\riderprojects\\myportfolio\\src\\myportfolio.infrastructure\\backgroundservices\\pluginmonitoringbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88A91FCC-7AFA-4B02-9E3B-4576B0FF6672}|src\\MyPortfolio.Infrastructure\\MyPortfolio.Infrastructure.csproj|solutionrelative:src\\myportfolio.infrastructure\\backgroundservices\\pluginmonitoringbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\DependencyInjection\\ApplicationServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Application\\DependencyInjection\\ApplicationServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\DependencyInjection\\ApplicationServiceCollectionExtensions.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Application\\DependencyInjection\\ApplicationServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:50:15.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Presentation\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Presentation\\Program.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Presentation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:49:07.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InfrastructureServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\DependencyInjection\\InfrastructureServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Infrastructure\\DependencyInjection\\InfrastructureServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\DependencyInjection\\InfrastructureServiceCollectionExtensions.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Infrastructure\\DependencyInjection\\InfrastructureServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBEAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:48:23.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PluginCompilerService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\Services\\PluginCompilerService.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Application\\Services\\PluginCompilerService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\Services\\PluginCompilerService.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Application\\Services\\PluginCompilerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:48:16.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PluginLoader.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginLoader.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginLoader.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginLoader.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:48:11.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\Interfaces\\CQRS\\ICommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Application\\Interfaces\\CQRS\\ICommandHandler.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\Interfaces\\CQRS\\ICommandHandler.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Application\\Interfaces\\CQRS\\ICommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:48:06.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\Interfaces\\CQRS\\IQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Application\\Interfaces\\CQRS\\IQueryHandler.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Application\\Interfaces\\CQRS\\IQueryHandler.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Application\\Interfaces\\CQRS\\IQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:48:08.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PluginMonitoringService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginMonitoringService.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginMonitoringService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginMonitoringService.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Infrastructure\\Plugins\\Services\\PluginMonitoringService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:47:21.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PluginMonitoringBackgroundService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\BackgroundServices\\PluginMonitoringBackgroundService.cs",
+              "RelativeDocumentMoniker": "src\\MyPortfolio.Infrastructure\\BackgroundServices\\PluginMonitoringBackgroundService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\RiderProjects\\MyPortfolio\\src\\MyPortfolio.Infrastructure\\BackgroundServices\\PluginMonitoringBackgroundService.cs",
+              "RelativeToolTip": "src\\MyPortfolio.Infrastructure\\BackgroundServices\\PluginMonitoringBackgroundService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T08:46:38.191Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 877,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
