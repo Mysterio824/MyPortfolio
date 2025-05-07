@@ -7,10 +7,11 @@
     "ImageUrl": "https://store-images.s-microsoft.com/image/apps.30645.9007199266245907.cb06f1f9-9154-408e-b4ef-d19f2325893b.ac3b465e-4384-42a8-9142-901c0405e1bc",
     "GitHubUrl": "https://github.com/Mysterio824/Android-Final-Project",
     "LiveDemoUrl": "https://github.com/Mysterio824/Android-Final-Project",
-    "CreatedDate": "2025-05-03T00:29:53.6001023+07:00",
+    "CreatedDate": "2025-05-08T01:22:41.4557149+07:00",
     "Technologies": [
       "kotlin",
-      "Firebase"
+      "Firebase",
+      "Jetpack Compose"
     ],
     "Features": [
       "real-time chatting",

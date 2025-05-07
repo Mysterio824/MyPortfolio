@@ -2,18 +2,26 @@
   "Name": "ProjectPlugin_DevTools",
   "Project": {
     "Id": "00000000-0000-0000-0000-000000000000",
-    "Title": "DevTools",
-    "Description": "Window application that provide tools",
+    "Title": "DevTools Backend",
+    "Description": "Backend system for a modular developer tools platform that enables hot-plugging of development tools",
     "ImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS17j-nkc_c3WciWnT3MyVIIdMpqbwD77Ex2g\u0026s",
     "GitHubUrl": "https://github.com/Mysterio824/final-project---TKPM1",
     "LiveDemoUrl": "https://github.com/Mysterio824/final-project---TKPM1",
-    "CreatedDate": "2025-05-03T00:22:45.5506181+07:00",
+    "CreatedDate": "2025-03-01T00:00:00.0000000+07:00",
     "Technologies": [
       "C#",
-      "WinUI3"
+      "ASP.NET Core",
+      "SQL Server",
+      "JWT",
+      "Clean Architecture"
     ],
     "Features": [
-      "docker"
+      "Clean Architecture Implementation",
+      "JWT Authentication & Authorization",
+      "RESTful API Development",
+      "Repository Pattern",
+      "Plugin System Management",
+      "Role-based Access Control"
     ]
   }
 }

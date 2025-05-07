@@ -1,0 +1,32 @@
+{
+  "Name": "ProjectPlugin_PhoneCommerce",
+  "Project": {
+    "Id": "67123dd0-0c1b-4a45-b05e-5759c9e4aac4",
+    "Title": "Phone Commerce Backend",
+    "Description": "Backend system for a modern e-commerce platform specializing in phone sales with advanced features like real-time inventory, cart management, and order processing",
+    "ImageUrl": "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/e-commerce-la-gi-1.jpg",
+    "GitHubUrl": "https://github.com/Mysterio824/phone-commerce-website",
+    "LiveDemoUrl": "https://github.com/Mysterio824/phone-commerce-website",
+    "CreatedDate": "2025-04-01T00:00:00.0000000+07:00",
+    "Technologies": [
+      "JavaScript",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "JWT",
+      "RESTful API"
+    ],
+    "Features": [
+      "Product Management System",
+      "Advanced Search & Filtering",
+      "Shopping Cart Operations",
+      "Order Processing System",
+      "Real-time Inventory Management",
+      "Multiple Payment Methods",
+      "Shipping Method Integration",
+      "User Authentication & Authorization",
+      "Product Reviews & Ratings",
+      "Promotion & Discount System"
+    ]
+  }
+} 
